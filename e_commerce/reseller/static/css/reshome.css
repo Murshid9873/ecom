@@ -1,0 +1,41 @@
+.div2{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    padding-left: 10px;
+}
+.div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    padding: 30px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+#pic1{
+    height: 200px;
+}
+#v1{
+  text-decoration: none;
+}    
+.header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 50px;
+    padding-top: 20px;
+}
+.div4{
+    color: rgb(82, 86, 89);
+    font-size: 3.6ch;
+    font-family: 'Times New Roman', Times, serif;
+}
+.div5{
+    padding-left: 90px;
+    font-size: 2.2ch;
+}
+.card:hover{ 
+    /* background-color: black;
+    color: white;
+    opacity: 0.6; */
+    transition: 0.4s;
+    transform: scale(1.1);
+}

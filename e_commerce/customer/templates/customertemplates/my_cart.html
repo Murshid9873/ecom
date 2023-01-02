@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/prodetails.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="header">
+        <div class="div1">
+          E-Commerce
+        </div>
+        <div class="div2">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link " href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Orders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Change Password</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'customer:logout' %}">LogOut</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <div id="hr"><hr></div>
+     <section class="div">
+
+    <section class="div">
+        <table class="table table-dark table-striprd text-center">
+          <tr>
+            <th>SI.NO</th>
+            <th>Product Name</th>
+            <th>Description</th>
+            <th>Product Number</th>
+            <th>Product Image</th>
+            <th>Total Price</th>
+            <th></th>
+        </tr>
+          {% for details in cart  %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{details.Product.p_name}}</td>
+                <td>{{details.Product.description}}</td>
+                <td>{{details.Product.p_no}}</td>
+                <td><img src="{{details.Product.upload.url}}" class="card-img-top" alt="..." style="width: 150px; height: 150px;"></td>
+                <td>{{details.Product.price}}</td>
+                <td> <a href="{% url 'customer:del_cart' details.id %}" style="text-decoration: none;">Delete</a> </td>
+            </tr>
+          {% endfor %}  
+        </table>
+    </section>    
+    
+</body>
+</html>

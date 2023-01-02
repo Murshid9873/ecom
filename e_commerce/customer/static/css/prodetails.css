@@ -1,0 +1,35 @@
+.header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 50px;
+    padding-top: 20px;
+}
+.div1{
+    color: rgb(82, 86, 89);
+    font-size: 3.6ch;
+    font-family: 'Times New Roman', Times, serif;
+}
+.div2{
+    padding-left: 90px;
+    font-size: 2.2ch;
+}
+.div3{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-top: 40px;
+    padding-left: 40px;
+    gap: 40px;
+    column-gap: 0px;
+    
+}
+#pic1{
+    height: 200px;
+}
+.card:hover{ 
+    /* background-color: black;
+    color: white;
+    opacity: 0.6; */
+    transition: 0.4s;
+    transform: scale(1.1);
+    
+}

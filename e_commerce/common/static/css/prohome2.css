@@ -1,0 +1,25 @@
+body{
+  background-image: url("../images/back1.jpg");
+  background-size: cover;
+}
+.div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 30px;
+    padding-left: 10px;
+}
+.div1{
+    font-size: 4.6ch;
+    padding-left: 100px;
+    font-family: Lucida Handwriting;
+    text-shadow: 1px 1px  ;
+    color: 87A287;
+}
+
+#div3:hover{
+    transition: 0.4s;
+    transform: scale(1.2); 
+}
+#div2{
+    padding-left: 70px;
+}
