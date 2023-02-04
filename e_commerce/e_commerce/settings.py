@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-+_*wri&1k+ofm4uq)h@27(*^3%j_kaf1r8-)bs(r49w7g0)8-$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -37,6 +37,8 @@ ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     'ecom_admin',
+    'restapi',
+    'rest_framework',
     'reseller',
     'common',
     'customer',
@@ -150,3 +152,33 @@ EMAIL_HOST_PASSWORD = 'vhjnwyahslmffyws'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+LOGGING = {
+
+    'version' : 1,
+    'disable_existing_loggers' : False,
+    'handlers' : {
+        'file' :{
+            'level' : 'DEBUG',
+            'class' : 'logging.FileHandler',
+            'filename' : BASE_DIR / 'logs/debug.log' ,
+
+        },
+    } ,
+
+    'loggers' : {
+        'django' : {
+            'handlers' : ['file'],
+            'level' : 'DEBUGG',
+            'propagate' : True,
+            'level' : os.getenv('DJANGO_LOG_LEVEL' , 'DEBUG')
+        },
+    },
+    'formatters' : {
+        'simpleRe' : {
+            'format' : '{levelname} {asctime} {module} {message}',
+            'style' : '{',
+        }
+    }
+}
+
